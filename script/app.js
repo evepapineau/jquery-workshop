@@ -38,7 +38,8 @@ function ISS() {
     function(res) {
         var $longitude = res.longitude
         var $latitude = res.latitude
-        // $("article h2").after(`<p class="position">Latitude : ${$latitude} Longitude : ${$longitude}</p>`);
+        $(".position").remove();
+        $("article h2").after(`<p class="position">Latitude : ${$latitude} Longitude : ${$longitude}</p>`);
         
         var $img = $('img');
         $img.attr('src', `https://maps.googleapis.com/maps/api/staticmap?center=${$latitude},${$longitude}
