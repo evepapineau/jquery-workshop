@@ -1,10 +1,12 @@
-/* Write your code here! */
-var $replace = $("<button id='replace' class='myButton'>show announcement</button>")
-var $button = $("<button id='btn' class='myButton'>X</button>")
-$(".announcement").append($button);
-$(".announcement").append($replace);
-
-$(".myButton").click(function(event){
-    $(".announcement p, #replace, #btn").toggle();
+$('ul li img').on('click', function() {
+    var imgSource = $(this).attr('src');
+    var imgText = $(this).attr('alt');
+    $(".overlay").toggleClass('overlayHide');
+    $(".bigImage").attr('src', imgSource);
+    $(".imageCaption").text(imgText);
 })
+
+$('.overlay').click(function() {
+      $('.overlay').toggleClass('overlayHide');
+  })
 
